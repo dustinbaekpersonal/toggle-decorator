@@ -1,12 +1,12 @@
 """Computation functions to put decorators."""
+
 import random
-from pprint import pprint
 
 from src.decorators import timer
 from src.toggle_decorator import ToggleDecorator
 
 toggle_timer = ToggleDecorator(timer)
-toggle_timer.enabled = True
+
 
 @toggle_timer
 def add_one(tmp: list[int]) -> list:

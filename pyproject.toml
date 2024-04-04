@@ -23,7 +23,7 @@ convention = "google"
 
 [tool.ruff.extend-per-file-ignores]
 # Also ignore `E402` in all `__init__.py` files.
-"__init__.py" = ["D104"]
+"__init__.py" = ["D"]
 
 [tool.mypy]
 python_version = "3.9"
