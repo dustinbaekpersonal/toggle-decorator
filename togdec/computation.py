@@ -2,8 +2,8 @@
 
 import random
 
-from src.decorators import timer
-from src.toggle_decorator import ToggleDecorator
+from togdec.decorators import timer
+from togdec.toggle_decorator import ToggleDecorator
 
 toggle_timer = ToggleDecorator(timer)
 
