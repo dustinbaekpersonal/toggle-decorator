@@ -1,0 +1,46 @@
+[project]
+name = "profiler"
+version = "0.0.1"
+description = "line profiler without using decorator"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[tool.ruff]
+line-length = 92
+select = [
+  "C4",  # flake8-comprehensions
+  "E",   # pycodestyle error
+  "F",   # pyflakes
+  "UP",  # pyupgrade
+  "D",   # pydocstyle
+  "I",   # isort
+  "B",   # flake8-bugbear
+  "W",   # warning
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.extend-per-file-ignores]
+# Also ignore `E402` in all `__init__.py` files.
+"__init__.py" = ["D104"]
+
+[tool.mypy]
+python_version = "3.9"
+show_error_codes = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "dataikuapi",
+    "dateutil",
+    "dataikuapi.dss.savedmodel"
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = """
+-v --cov=dataiku_pytools \
+--cov-report term-missing \
+--cov-report xml:coverage.xml
+"""
