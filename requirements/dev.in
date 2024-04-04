@@ -2,3 +2,4 @@ line_profiler
 mypy
 ruff
 loguru
+pre-commit
